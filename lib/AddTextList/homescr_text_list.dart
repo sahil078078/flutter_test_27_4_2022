@@ -10,10 +10,10 @@ class HomeScrTxList extends StatefulWidget {
 }
 
 class _HomeScrTxListState extends State<HomeScrTxList> {
-  List<dynamic> data = ['sahil@123gmail.com'];
-  List<TextFormField> myTextFormField = [TextFormField()];
-  late List<TextEditingController> val =
-      List.generate(myTextFormField.length, (index) => TextEditingController());
+  // List<String> data = ['sahil@123gmail.com'];
+  // List<int> myTextFormField = [0];
+  late List<TextEditingController> val = List.generate(
+      /* myTextFormField.length */ 1, (index) => TextEditingController());
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
 
   @override
@@ -34,8 +34,7 @@ class _HomeScrTxListState extends State<HomeScrTxList> {
         child: Column(
           children: [
             Expanded(
-              child: TextFormFieldGenerator(
-                  myTextFormField: myTextFormField, val: val),
+              child: TextFormFieldGenerator(val: val),
             ),
             SubmitButtom(globalKey: _globalKey, value: val),
           ],
@@ -47,14 +46,7 @@ class _HomeScrTxListState extends State<HomeScrTxList> {
   addTextField() {
     setState(() {
       val.add(TextEditingController());
-      myTextFormField.add(
-        TextFormField(
-          decoration: const InputDecoration(
-            border: InputBorder.none,
-            hintText: 'Enter Your Email',
-          ),
-        ),
-      );
+      // myTextFormField.add(0);
     });
   }
 }

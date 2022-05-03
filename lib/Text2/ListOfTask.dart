@@ -28,7 +28,8 @@ List<ListMainTab> infolist = [
   ListMainTab(
     name: 'Profile',
     icon: Icons.person,
-    isDroplist: false,
+    isDroplist: true,
+    listOfSub: subInfoList,
   ),
   ListMainTab(
     isDroplist: true,
@@ -52,5 +53,12 @@ List<ListOfSubTab> subInfoList = [
   ListOfSubTab(
     name2: 'LogOut',
     icon2: Icons.logout,
+  ),
+];
+
+List<ListOfSubTab> subInfoList1 = [
+  ListOfSubTab(
+    name2: 'edit',
+    icon2: Icons.edit,
   ),
 ];

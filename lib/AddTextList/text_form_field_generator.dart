@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 class TextFormFieldGenerator extends StatefulWidget {
   const TextFormFieldGenerator({
     Key? key,
-    required this.myTextFormField,
     required this.val,
   }) : super(key: key);
 
-  final List<TextFormField> myTextFormField;
   final List<TextEditingController> val;
 
   @override
@@ -19,7 +17,7 @@ class _TextFormFieldGeneratorState extends State<TextFormFieldGenerator> {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      itemCount: widget.myTextFormField.length,
+      itemCount: widget.val.length,
       itemBuilder: (context, index) {
         return Container(
           padding: const EdgeInsets.only(
@@ -49,7 +47,7 @@ class _TextFormFieldGeneratorState extends State<TextFormFieldGenerator> {
                       onTap: () {
                         setState(() {
                           if (index >= 1) {
-                            widget.myTextFormField.removeAt(index);
+                            widget.val.removeAt(index);
                           }
                         });
                       },
